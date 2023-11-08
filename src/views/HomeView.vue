@@ -1,5 +1,4 @@
 <script setup lang="ts">
-  import TheWelcome from '../components/TheWelcome.vue';
   import InputLine from "@/components/InputLine.vue";
   import HeaderLine from "@/components/HeaderLine.vue";
   import RoomleOverlay from "@/components/RoomleOverlay.vue";
