@@ -51,19 +51,19 @@
     onClick: Function,
   });
 
-  const lengthInput = ref(null as HTMLInputElement);
-  const widthInput = ref(null as HTMLInputElement);
-  const materialSelect = ref(null as HTMLSelectElement);
+  const lengthInput = ref(null);
+  const widthInput = ref(null);
+  const materialSelect = ref(null);
 
   const actualSelected = computed(() => {
-    return useMainStore().selectedMaterial[props.lineCount];
+    return useMainStore().selectedMaterial[props.lineCount!];
   });
 
   const setParams = async () => {
     const mainStore = useMainStore();
-    await mainStore.setRoomleLength(lengthInput.value.value);
-    await mainStore.setRoomleWidth(widthInput.value.value);
-    await mainStore.setRoomleMaterial(mainStore.getParameters[0].validValues[materialSelect.value.selectedIndex].value);
+    await mainStore.setRoomleLength(lengthInput.value!.value);
+    await mainStore.setRoomleWidth(widthInput.value!.value);
+    await mainStore.setRoomleMaterial((mainStore.getParameters[0] as any).validValues[materialSelect.value.selectedIndex].value);
     mainStore.setActiveLine(props.lineCount);
   };
 
