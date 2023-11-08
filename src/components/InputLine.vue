@@ -1,13 +1,13 @@
 <template>
   <div class="flex h-10 gap-0">
-    <div class="border w-32 p-5  flex items-center pl-2 bg-gray-400">{{ lineCount + 1 }}</div>
+    <div class="border w-32 p-5  flex items-center pl-2 bg-gray-400">{{ lineCount! + 1 }}</div>
     <input class="border w-48 flex items-center pl-2"/>
     <input class="border w-24 flex items-center pl-2" :placeholder="'1'"/>
-    <input class="border w-32 flex items-center pl-2" :placeholder="useMainStore().getLength[lineCount]"
-           :value="useMainStore().getLength[lineCount]"
+    <input class="border w-32 flex items-center pl-2" :placeholder="useMainStore().getLength[lineCount!]"
+           :value="useMainStore().getLength[lineCount!]"
            ref="lengthInput"/>
-    <input class="border w-32 flex items-center pl-2" :placeholder="useMainStore().getWidth[lineCount]"
-           :value="useMainStore().getWidth[lineCount]" ref="widthInput"/>
+    <input class="border w-32 flex items-center pl-2" :placeholder="useMainStore().getWidth[lineCount!]"
+           :value="useMainStore().getWidth[lineCount!]" ref="widthInput"/>
     <!--    <select class="border w-24 flex items-center pl-2" ref="thicknessSelect">-->
     <!--      <option :key="value.value" v-for="value in useMainStore().getParameters[4]?.validValues">-->
     <!--        {{ value.label }}-->
