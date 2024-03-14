@@ -60,11 +60,13 @@
   });
 
   const setParams = async () => {
+    debugger;
     const mainStore = useMainStore();
+    mainStore.setActiveLine(props.lineCount);
     await mainStore.setRoomleLength(lengthInput.value!.value);
     await mainStore.setRoomleWidth(widthInput.value!.value);
     await mainStore.setRoomleMaterial((mainStore.getParameters[4] as any).validValues[materialSelect.value.selectedIndex].value);
-    mainStore.setActiveLine(props.lineCount);
+
   };
 
   const openRoomle = async () => {

@@ -32,6 +32,7 @@ export const useMainStore = defineStore('mainStore', () => {
 
   const getLength = computed(() => length.value);
   const setLength = (lengthNo: number, val: string) => {
+    debugger;
     if (lengthNo != null && lengthNo <= length.value.length) {
       length.value[lengthNo] = val;
     } else {

@@ -54,7 +54,7 @@
     console.log(configurator);
     const mainStore = useMainStore();
     mainStore.setConfigurator(configurator);
-    await configurator.ui.loadObject('productionmanager:hornbach_worktop_master');
+    configurator.ui.loadObject('productionmanager:hornbach_worktop_master');
     configurator.extended.callbacks.onUpdateParameters = (parameters) => {
       if (parameterInitializedCallback) {
         parameterInitializedCallback(parameters);
