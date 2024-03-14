@@ -41,8 +41,8 @@
       parameterInitializedCallback = resolve;
     });
     for (let i = 0; i < 4; i++) {
-      mainStore.setLength(i, mainStore.parameters[2].value);
-      mainStore.setWidth(i, mainStore.parameters[3].value);
+      mainStore.setLength(i, mainStore.parameters[1].value);
+      mainStore.setWidth(i, mainStore.parameters[2].value);
     }
   });
   const loadConfigurator = async () => {
@@ -54,7 +54,7 @@
     console.log(configurator);
     const mainStore = useMainStore();
     mainStore.setConfigurator(configurator);
-    configurator.ui.loadObject('productionmanager:hornbach_worktop_master');
+    await configurator.ui.loadObject('productionmanager:hornbach_worktop_master');
     configurator.extended.callbacks.onUpdateParameters = (parameters) => {
       if (parameterInitializedCallback) {
         parameterInitializedCallback(parameters);
@@ -62,10 +62,10 @@
       parameterInitializedCallback = null;
       mainStore.setParameters(parameters);
       console.log(parameters, 'parameters');
-      mainStore.setLength(mainStore.activeLine, parameters[2].value);
-      mainStore.setWidth(mainStore.activeLine, parameters[3].value);
-      for (let [index, material] of mainStore.getParameters[0].validValues.entries()) {
-        if (material.label === mainStore.getParameters[0].value) {
+      mainStore.setLength(mainStore.activeLine, parameters[1].value);
+      mainStore.setWidth(mainStore.activeLine, parameters[2].value);
+      for (let [index, material] of mainStore.getParameters[4].validValues.entries()) {
+        if (material.label === mainStore.getParameters[4].value) {
           mainStore.setSelectedMaterial(mainStore.activeLine, index);
           return;
         }

@@ -63,7 +63,7 @@
     const mainStore = useMainStore();
     await mainStore.setRoomleLength(lengthInput.value!.value);
     await mainStore.setRoomleWidth(widthInput.value!.value);
-    await mainStore.setRoomleMaterial((mainStore.getParameters[0] as any).validValues[materialSelect.value.selectedIndex].value);
+    await mainStore.setRoomleMaterial((mainStore.getParameters[4] as any).validValues[materialSelect.value.selectedIndex].value);
     mainStore.setActiveLine(props.lineCount);
   };
 
@@ -79,10 +79,10 @@
 
   const getMaterials = computed(() => {
     const materials = [];
-    if (!useMainStore().getParameters[0] || useMainStore().getParameters.length <= 1) {
+    if (!useMainStore().getParameters[4] || useMainStore().getParameters.length <= 1) {
       return;
     }
-    for (let value of useMainStore().getParameters[0].validValues) {
+    for (let value of useMainStore().getParameters[4].validValues) {
       const str = value.label.split(':');
       materials.push(str[1]);
     }
